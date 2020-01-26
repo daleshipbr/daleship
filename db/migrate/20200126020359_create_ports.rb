@@ -1,15 +1,15 @@
 class CreatePorts < ActiveRecord::Migration[6.0]
   def change
     create_table :ports do |t|
-      t.string :name
-      t.string :zipcode
-      t.string :street
-      t.integer :number
+      t.string :name, null: false
+      t.string :zipcode, null: false
+      t.string :street, null: false
+      t.integer :number, null: false
       t.string :complement
       t.string :neighborhood
-      t.string :city
-      t.string :state
-      t.string :country
+      t.string :city, null: false
+      t.string :state, null: false
+      t.string :country, null: false
 
       t.timestamps
     end
