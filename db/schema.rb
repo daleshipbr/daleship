@@ -92,8 +92,8 @@ ActiveRecord::Schema.define(version: 2020_01_26_024245) do
     t.string "email", null: false
     t.string "password_digest", null: false
     t.string "job_title", null: false
-    t.string "type", null: false
-    t.bigint "company_id", null: false
+    t.string "user_type", null: false
+    t.bigint "company_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["company_id"], name: "index_users_on_company_id"
