@@ -1,0 +1,378 @@
+.form {
+input[type="email"],
+input[type="number"],
+input[type="search"],
+input[type="text"],
+input[type="tel"],
+input[type="url"],
+input[type="password"],
+textarea,
+select {
+    border: 1px solid #BBC2C8;
+    border-radius: 23px;
+    font-family: "Gotham Rounded Book", Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 14px 32px 13px 14px;
+    width: 114%;
+    height: 46px;
+    transform: scale(0.875);
+    transform-origin: top left;
+    color: #4D4D4D;
+    background-color: #FFF;
+    margin-right: -14%;
+    margin-bottom: -6px;
+
+    appearance: none;
+    outline: none;
+    box-shadow: 1px 1px 3px 0 rgba(0, 0, 0, 0.1);
+
+&[disabled] {
+     background-color: #EFEFEF;
+
+~ .loader {
+    visibility: visible;
+    right: -1px;
+}
+}
+
+&.field_with_errors {
+     border-color: #D0021B !important;
+     color: #D0021B !important;
+     background: image_url("v4/icons/form/alert.svg") no-repeat right 12px center;
+ }
+
+&:focus {
+     border-color: #FAAF36;
+
+& + label {
+      color: #FAAF36;
+  }
+}
+}
+
+textarea {
+    height: 200px;
+}
+
+select {
+    background: image-url('v4/icons/arrow-short-down-gray.svg') no-repeat right 15px center;
+    background-size: 8px;
+}
+
+label {
+    cursor: pointer;
+}
+
+::placeholder {
+    color: #A5A5A5;
+}
+
+&__input {
+     position: relative;
+     width: max-content;
+     max-width: 100%;
+
+& + & {
+      margin-top: 18px;
+  }
+
+label {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transition: all 0.2s ease-in-out;
+    transform: translateY(-50%);
+    background-color: #FFF;
+    color: #A5A5A5;
+    pointer-events: none;
+    font-family: "Gotham Rounded Book", Helvetica, Arial, sans-serif;
+    font-size: 15px;
+
+&.field_with_errors {
+     color: #D0021B !important;
+ }
+
+&.required:after {
+     content: "*";
+ }
+}
+
+input:focus, input.filled, select.filled {
+& + label {
+      left: 8px;
+      top: 0;
+      font-size: 12px;
+      padding: 0 5px;
+  }
+}
+
+.loader {
+    position: absolute;
+    top: 0;
+    right: 0;
+    visibility: hidden;
+}
+
+& + h4 {
+      margin-top: 32px;
+  }
+
+&--search {
+input[type="text"] {
+    padding-left: 18px;
+}
+
+input[type="submit"] {
+    position: absolute;
+    top: 7px;
+    right: 18px;
+    width: 24px;
+    height: 24px;
+    border: 0;
+    background: image_url("v4/icons/search.svg");
+    cursor: pointer;
+}
+}
+
+&--alt {
+label {
+    position: relative;
+    top: auto;
+    left: auto;
+    transition: none;
+    transform: none;
+    background: none;
+    pointer-events: initial;
+
+    color: #4D4D4D;
+    font: 400 14px/1 "Gotham Rounded";
+    border-left: 2px solid #F8AD38;
+    padding-left: 8px;
+    margin-bottom: 16px;
+    display: block;
+
+&.field_with_errors {
+     border-color: #D0021B;
+ }
+}
+
+input:focus {
+    border-color: #F8AD38;
+}
+
+& + & {
+      margin-top: 32px;
+  }
+}
+
+&--removable {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+
+button {
+    flex: 0 0 40px;
+    height: 40px;
+    display: block;
+    background: image_url("v4/icons/cross-red.svg") no-repeat center;
+    margin-left: 16px;
+    cursor: pointer;
+}
+}
+
+&--checkbox, &--radio {
+                  min-height: 20px;
+                  display: flex;
+
+label {
+    position: static;
+    transform: none;
+    background: transparent;
+    pointer-events: initial;
+
+    padding-left: 12px !important;
+    padding-right: 0 !important;
+    font-size: 13px !important;
+    color: #4D4D4D;
+}
+}
+
+&--checkbox {
+[type='checkbox'] {
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+
+&:before {
+     content: '';
+     position: absolute;
+     z-index: 100;
+     width: 20px;
+     height: 20px;
+     border: 2px solid #A5A5A5;
+     border-radius: 4px;
+     top: 0;
+     left: 0;
+     background-color: #FFF;
+ }
+
+&:after {
+     background: image_url("v4/icons/checkmark-purple.svg") center no-repeat;
+     background-size: 12px;
+     content: '';
+     position: absolute;
+     z-index: 100;
+     width: 12px;
+     height: 12px;
+     top: 4px;
+     left: 4px;
+     transition: all 0.2s ease;
+     transform: scale(0);
+ }
+
+&:checked:before {
+     border-color: #4F0798;
+ }
+
+&:checked:after {
+     transform: scale(1);
+ }
+}
+}
+
+&--radio {
+[type='radio'] {
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: 0;
+
+&:before {
+     content: '';
+     position: absolute;
+     z-index: 100;
+     width: 20px;
+     height: 20px;
+     border: 2px solid #A5A5A5;
+     border-radius: 50%;
+     top: 0;
+     left: -1px;
+     background-color: #FFF;
+ }
+
+&:after {
+     content: '';
+     position: absolute;
+     z-index: 100;
+     width: 12px;
+     height: 12px;
+     top: 4px;
+     left: 3px;
+     background: #4F0798;
+     border-radius: 50%;
+     transition: all 0.2s ease;
+     transform: scale(0);
+ }
+
+&:checked:before {
+     border-color: #4F0798;
+ }
+
+&:checked:after {
+     transform: scale(1);
+ }
+}
+}
+
+&--100 {
+input, select {
+    width: 100px !important;
+}
+}
+
+&--125 {
+input, select {
+    width: 125px !important;
+}
+}
+
+&--150 {
+input, select {
+    width: 150px !important;
+}
+}
+
+&--175 {
+input, select {
+    width: 175px !important;
+}
+}
+
+&--225 {
+input, select {
+    width: 225px !important;
+}
+}
+}
+
+&__pair {
+     display: flex;
+
+.form__input {
+    margin-top: 0;
+
+& + .form__input {
+      margin-left: 12px;
+  }
+}
+
+&--custom {
+     justify-content: flex-start;
+
+.form__input {
+    flex-basis: 1px;
+}
+}
+
+& + &, & + .form__input, .form__input + & {
+             margin-top: 18px;
+         }
+}
+
+&__group {
+h4 {
+    color: #4D4D4D;
+    font: 400 14px/1 "Gotham Rounded";
+    border-left: 2px solid #F8AD38;
+    padding-left: 8px;
+    margin-bottom: 16px;
+    display: block;
+}
+}
+
+&--inline {
+.form__input + .form__input {
+    margin-top: 0;
+    margin-left: 18px;
+}
+
+.form__input + input[type="submit"] {
+    margin-top: 0;
+    margin-left: 18px;
+}
+}
+
+.error {
+    font-size: 11px;
+    color: #D0021B;
+    display: block;
+    margin: 6px 0 0 12px;
+
+& + .form__input, & + .form__pair, & + .form__group {
+                                         margin-top: 18px;
+                                     }
+}
+}
