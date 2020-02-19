@@ -1,30 +1,15 @@
 <!DOCTYPE html>
-<html lang=<%= @language %>>>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="robots" content="noindex">
+<html>
+  <head>
+    <title>Daleship</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
 
-  <title><%= yield(:title) %></title>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
 
-  <%#= render "layouts/shared/festalab" %>
-  <%#= render "layouts/shared/performance" %>
-  <%#= render "layouts/internal/assets" %>
-  <%#= render "layouts/shared/favicons" %>
-  <%#= render "layouts/shared/third_party" %>
-
-  <%#= csrf_meta_tags %>
-  <%#= yield(:header) %>
-</head>
-
-<body data-controller="application" <%= amplitude %>>
-<article>
-  <div class="main-overlay"><b></b></div>
-  <%#= render 'layouts/internal/header' %>
-  <%#= render 'layouts/internal/nav' %>
-  <%#= render 'layouts/internal/aside' %>
-<!--  <main <%#= dom_view_id_tag %> <%#= dom_view_class_tag("master-main") %>><%#= yield %></main>-->
-</article>
-</body>
+  <body>
+    <%= yield %>
+  </body>
 </html>
-
