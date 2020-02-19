@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# TODO this is all an example, check what is good and what is unnecessary
-
 module Permission
   class BasePermission
     def allow_all
