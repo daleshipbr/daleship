@@ -3,14 +3,24 @@
   justify-content: space-between;
   align-items: center;
   min-height: 100px;
+  margin-right: 20px;
+  margin-left: 20px;
 
   &__content {
 
   }
 
+  &__logo {
+    height: 50px;
+    width: 150px;
+  }
+
   &__menu {
-    background-image: image_url("v1/icons/three_bars.png");
-    background-size: 40px 40px;
+    width: 150px;
+    height: 40px;
+  }
+
+  &__bars {
     width: 40px;
     height: 40px;
   }
