@@ -3,7 +3,7 @@
 module Permission
   class GuestPermission < BasePermission
     def initialize
-      allow "sessions", [:new, :create]
+      allow_all
     end
   end
 end

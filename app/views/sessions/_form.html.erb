@@ -1,5 +1,8 @@
-<%= daleship_form_with(scope: :session, url: login_path) do |form| %>
+<%= daleship_form_with(scope: :session, url: sessions_path) do |form| %>
   <%= form.labeled_field(:email, :email) %>
   <%= form.labeled_field(:password, :password, content: "Senha") %>
   <%= form.submit "Entrar", class: 'btn btn--s-purple mt-24' %>
 <% end %>
+
+
+<%= teste %>

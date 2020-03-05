@@ -29,8 +29,6 @@ module Authentication
   def log_in(user)
     session[:user_id] = user.id
     Current.user ||= user
-
-    deanonymize_events
   end
 
   def remember(user)
