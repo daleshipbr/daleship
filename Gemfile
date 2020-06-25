@@ -3,7 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 
-gem 'rack', '2.0.8' # Rack 2.1 is causing problems with Sidekiq. Remove this after it's fixed
+gem 'rack', '2.1.4' # Rack 2.1 is causing problems with Sidekiq. Remove this after it's fixed
 gem 'bcrypt'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
